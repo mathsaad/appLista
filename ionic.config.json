@@ -1,0 +1,8 @@
+{
+  "name": "applista",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "b0de93e8"
+}
