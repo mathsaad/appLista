@@ -4,11 +4,17 @@
       <img :src="person.photo" :alt="person.username">
     </ion-avatar>
     <ion-label>
-      {{ person.username }},
-      {{ person.age }} anos, <br>
-      {{ person.gender }},
-      {{ person.sexualOrientation }},<br>
-      {{ person.city }}
+      <p>
+          {{ person.username }},
+          {{ person.age }} anos,
+      </p>
+      <p>
+          {{ person.gender }},
+      {{ person.sexualOrientation }},
+      </p>
+        <p>
+            {{ person.city }}
+        </p>
     </ion-label>
   </ion-item>
 </template>
