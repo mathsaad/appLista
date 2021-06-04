@@ -21,18 +21,16 @@ const index = {
         async resetState ({ commit}) {
             commit('RESET_STATE');
         },
-        async initChat ({ commit, state }) {
+        async initChat ({ commit }) {
             let persons;
-            if (state.persons === null) {
-                await axios.get( "https://my.api.mockaroo.com/mobiletest.json", {
-                    headers: {
-                        'X-API-Key': '82333f10'
-                    }
-                }).then(response => persons =  [ ...response.data ] );
-                await commit('SET_CURRENT_ARRAY_PERSON', {
-                    persons: [...persons]
-                });
-            }
+            await axios.get( "https://my.api.mockaroo.com/mobiletest.json", {
+                headers: {
+                    'X-API-Key': '82333f10'
+                }
+            }).then(response => persons =  [ ...response.data ] );
+            await commit('SET_CURRENT_ARRAY_PERSON', {
+                persons: [...persons]
+            });
         }
     },
     getters: {
