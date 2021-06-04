@@ -34,18 +34,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .person {
     display: inline-block;
     margin-top: 1rem;
     margin-left: 1rem;
     margin-right: .7rem;
-}
-.space-image {
-    margin: auto;
-}
-.center-name {
-    display: flex;
-    justify-content: center;
+    .space-image {
+        margin: auto;
+    }
+    .center-name {
+        display: flex;
+        justify-content: center;
+    }
 }
 </style>
