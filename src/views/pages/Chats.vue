@@ -12,9 +12,9 @@
     </ion-toolbar>
     </ion-header>
     <div class="person-like">
-        <person-like v-for="(person, index) in persons['persons']" :key="index" :person="person"></person-like>
+        <person-like v-for="(person, index) in persons" :key="index" :person="person"></person-like>
     </div>
-    <chat-item v-for="(person, index) in persons['persons']" :key="index" :person="person"></chat-item>
+    <chat-item v-for="(person, index) in persons" :key="index" :person="person"></chat-item>
     </ion-content>
     </ion-page>
 </template>
@@ -23,22 +23,17 @@
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
 import ChatItem from "@/components/ChatItem.vue";
 import PersonLike from "@/components/PersonLike.vue";
-import {mapGetters} from "vuex";
+import { getPersons } from "../../service/chat"
 
 export default  {
     name: 'Chats',
     components: {PersonLike, ChatItem, IonHeader, IonToolbar, IonTitle, IonContent, IonPage },
     async mounted () {
-        await this.$store.dispatch('chat/initChat');
-    },
-    computed: {
-        ...mapGetters({
-            persons: 'chat/persons',
-            person: 'detail/person'
-        })
+        this.persons = await getPersons();
     },
     data() {
         return {
+            persons: []
         }
     }
 }

@@ -1,10 +1,8 @@
 import Vuex from 'vuex';
 
-import chat from './modules/chat';
 import detail from './modules/detail';
 
 const modules = {
-    chat,
     detail
 };
 
